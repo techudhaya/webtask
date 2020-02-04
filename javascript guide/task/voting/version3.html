@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>voting version 1</title>
+
+    <style>
+    
+
+        h1{
+            text-align: center;
+            padding: 10px;
+            box-shadow: 5px 10px #888888;
+            width: 80;
+        }
+
+        .vote-count{
+            text-align: center;
+            padding: 10px;
+            border:2px solid grey;
+            width: 80;
+        }
+
+        .voting{
+            background-image: url("back2.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .result{
+            padding:5%;
+            width: 30%;
+            height: 30vh;
+            float:right;
+            border:5px solid black;
+            margin-top: 10%;
+            margin: 3%;
+        }
+
+        .result table{
+            padding: 20%;
+        }
+
+        .result tr{
+            border:2px solid grey;
+            padding: 2%;
+            margin:5%;
+        }
+
+        .result td{
+            padding:0 30px;
+        }
+
+        tr td:nth-of-type(2){
+            background-color: grey;
+        }
+
+
+    
+
+        label{
+            border:2px solid grey;
+            display: inline-block;
+            width: 90%;
+            margin:3%;
+            font-size: 1.5em;
+            padding:4%;
+            
+        }
+
+        label:hover{
+            background-color: grey;
+        }
+
+        img{
+            width: 5vh;
+            width: 5vh;
+            float:right;
+
+        }
+
+        article{
+            display: inline-block;
+            width: 50%;
+    
+        }
+
+        button{
+            display: inline-block;
+            width: 100%;
+            font-size: 2em;
+            border-radius: 10px;
+            margin-top: 3%;
+        }
+
+
+        .popup{
+            display: none;
+            height: 80px;
+            width: 500px;
+            font-size: 1.5em;
+            border-radius: 20px;
+            text-align: center;
+            position: fixed;
+            top:10%;
+            background-color: rgb(97, 155, 206);
+            border: 2px solid black;
+            box-shadow: 10px 5px 5px;
+            margin-left: 35%;
+            opacity: 0.6;
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>ELECTION 2020</h1>
+    <div class="vote-count">0</div>
+    <div class="popup"> THANKS FOR VOTING :)  </div>
+
+    <section>
+
+        <article class="voting">
+            <form id="voting" >
+                <label>
+                    <input type="radio" name="vote" value="BJP" >BJP
+                    <img src="bjp.png">
+                </label>
+
+                <label>
+                    <input type="radio" name="vote" value="ADMK" > ADMK<br>
+                    <img src="admk.png">
+
+                </label>
+
+                <label>
+                    <input type="radio" name="vote" value="DMK" > DMK<br>
+                    <img src="dmk.png">
+
+                </label>
+
+                <label>
+                    <input type="radio" name="vote" value="CONG" > CONG<br>
+                    <img src="congress.png">
+
+                </label>
+
+
+                <button type="button" onclick="count(this.parentNode)" class="fade">vote</button>
+
+            </form>
+
+        </article>
+
+
+        <article class='result'>
+            <table></table>
+
+        </article>
+
+        <button onclick="result()" >result</button>
+
+    </section>
+
+
+    <script>
+        var total_counting=prompt("Enter number of votes");
+        var counting=1;
+        var map=new Map();
+        var vote=document.getElementsByName("vote");
+
+        // initial assingnment
+        for(var i=0;i<vote.length;i++){
+            map.set(vote[i].value,0);      
+        }
+
+        function count(THIS){
+
+            if(number_of_votes()){
+            //increment if voted
+            for(var i=0;i<vote.length;i++){
+                    if(vote[i].checked){
+                        map.set(vote[i].value,map.get(vote[i].value)+1);
+                    }
+                }
+
+            }
+            console.log(JSON.stringify(THIS))
+            document.forms[0].reset();
+          
+        }
+
+        function number_of_votes(){
+
+            if(counting>total_counting){
+                alert("vote completed");
+                result();
+                
+                return 0;
+            }
+            else{
+                document.getElementsByClassName("vote-count")[0].innerHTML=counting++;
+                return 1;
+            }    
+
+        }
+
+        function result(){
+            //sorting based on the key value
+            const mapSort = new Map([...map.entries()].sort((a, b) => b[1] - a[1]));
+
+            var table=document.getElementsByTagName("table")[0];
+                table.innerHTML="";
+
+            for(let [key,value] of mapSort){
+                var tr=document.createElement("tr");
+                var td=document.createElement("td");
+                td.textContent=key;
+                
+                tr.appendChild(td);
+
+                var td=document.createElement("td");
+                td.textContent=value;
+
+                tr.appendChild(td);
+                
+                table.appendChild(tr);
+
+            }
+        }
+
+        //  fade in and out
+        $(document).ready(function(){
+                $(".fade").click(function(){
+                $(".popup").fadeIn(1000);
+            $ (".popup").fadeOut(1000);
+                })
+            });   
+
+    </script>
+    
+</body>
+</html>

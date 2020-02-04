@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>jQuery1</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <script>
+    
+        $(document).ready(function(){
+
+            // change the color of the paragraph
+            $("#size").click(function(){
+                $(document.getElementsByTagName("p")[0]).css("color", "green");
+                $(this).css("background-color", "purple");
+                $(this).css("color", "white");
+            });
+        });
+    
+    
+    </script>
+
+    
+</head>
+<body>
+
+    <p>this is an paragraph</p>
+
+    <button id="size">size increase</button>
+
+</body>
+</html>

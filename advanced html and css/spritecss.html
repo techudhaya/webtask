@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>CSS sprite</title>
+
+    <style>
+     
+        li{
+            width:10%;
+            list-style: none;
+        }
+        li a {
+        background: linear-gradient(#fff, #eee);
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        display: block;
+        padding: 3px;
+        }
+        li a:hover {
+        border-color: #999;
+        }
+        li span {
+        background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/sprite.png") ;
+        
+        display: block;
+        height: 16px;
+        width: 16px;
+        }
+        .italic {
+        background-position: -16px 0;
+        }
+        .underline {
+        background-position: -32px 0;
+        }
+      
+    </style>
+    
+</head>
+<body>
+
+
+    <!-- sprite example -->
+    <ul>
+        <li><a href="#"><span class="bold"></span></a></li>
+        <li><a href="#"><span class="italic"></span></a></li>
+        <li><a href="#"><span class="underline"></span></a></li>
+       
+      </ul>
+
+      <div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/29841/sprite.png" alt="css spite"></div>
+
+
+      
+</body>
+</html>

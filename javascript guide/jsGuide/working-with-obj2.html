@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>working with object 2</title>
+</head>
+<body>
+    
+
+    
+    <script>
+        
+        var obj1={a:'apple', n:"note", greet:function(){console.log("greeting")}};
+        var obj2=function(){    this.aa='this obj222'};
+        
+        // Object.setPrototypeOf(obj2,obj1);
+        
+        obj2.prototype=obj1;
+        
+        var o1=new obj2;
+        console.log(o1.greet());
+        
+
+
+
+        class people { 
+            constructor(name) 
+            { 
+                this.name = name; 
+            } 
+
+        } 
+
+        let p1 = new people("john"); 
+
+        // Output : Adam	 
+        console.log(p1.name);	 
+
+
+        ///////////
+
+        let person = { 
+            gender : "male"
+        } 
+
+        var person1 = new Object();
+        var person2=Object.create(person);
+
+        person1.name = "Adam"; 
+        person1.age = 45; 
+        person1.nationality = "Australian"; 
+
+        person2.loc="india";
+
+        for (let key in person2) { 
+        // Output : name, age, nationality 
+        // and gender 
+            console.log(key); 
+}		 
+
+
+        
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>animation1</title>
+    <style>
+
+        .elem-1{
+            background-color: lightskyblue;
+            width:100px;
+            padding: 20px;
+            border-radius: 50px;
+            margin:100px;
+           /* transition:  1s 0s linear;  transition_duration delay timing_function */
+            transition: color 3s 2s ,background-color 1s, transform 2s; 
+        }
+        
+        .elem-1:hover{
+            background-color:steelblue;
+            transform: rotate(1080deg);
+            cursor:pointer;
+            color:white;
+        }
+
+    </style>
+</head>
+<body>
+
+   <div class="elem-1">touch</div>
+    
+</body>
+</html>

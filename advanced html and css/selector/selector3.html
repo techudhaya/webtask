@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>selector 3</title>
+
+    <style>
+      
+        a:visited{
+            color:hotpink;
+        }
+        a:hover{
+            color:green;
+        }
+
+        a:active{
+            color:orange;
+        }
+
+        input:focus{
+            background-color:orangered;
+        }
+
+
+
+
+        /* pseudo class */
+        p:first-child{
+            color:red;
+        }
+
+        p:last-child{
+            color:blue;
+        }
+
+        p:only-child{
+            color:green;
+        }
+
+        p:nth-of-type(3n+2){
+             color:violet;
+        }
+
+        article :not(p){
+            background-color:grey;
+        }
+
+
+        /* pseudo element */
+        div p::first-letter{
+            font-size: 50px;
+        }
+        
+        ::selection{
+            background-color:palegoldenrod;
+        }
+        div p::after{
+            display: block;
+            content:"inserted content";
+            color:yellowgreen
+        }
+    
+    </style>
+</head>
+<body>
+
+
+
+
+    <article>
+        <p> this is a paragraph1</p>
+        <p>this is a paragraph2</p>
+        <p>this is a paragraph3</p>
+        <p>this is a paragraph4</p>
+        <div>thi is an div</div>
+        <p>this is a paragraph5</p>
+        <p>this is a paragraph6</p>
+        <p>this is a paragraph7</p>
+        <p>this is a paragraph8</p>
+        <p>this is a paragraph9</p>
+    </article>
+
+    <div><p>this is h2 heading</p></div>
+
+    <hr>
+
+    <div><a href="#">This is an link</a></div>
+
+    <hr>
+
+
+    <br>
+
+    <label for="input1">input 1</label>
+    <input type="text" name="input1" id="input1">
+    
+</body>
+</html>

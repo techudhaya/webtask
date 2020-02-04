@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chess board</title>
+
+    <style>
+    
+
+        .board{
+            border:10px solid burlywood;
+            display: inline-block;
+        }
+        .piece1,.piece2{
+            height:50px;
+            width: 50px;
+            background-color:rgb(133, 86, 0);
+            border:1px solid black;
+            display: inline-block;
+        }
+
+        .piece2{
+            background-color: wheat;
+            border:1px solid black;
+        }
+    
+    
+    
+    </style>
+
+    <script>
+    
+    document.write('<div class="board">');
+
+        var f=0;
+        for(var i=0;i<8;i++){
+            for(var j=0;j<8;j++){
+                if(f==0)
+                {   document.write('<div class="piece1"></div>'); f=1; }
+                else
+                {   document.write('<div class="piece2"></div>'); f=0; }
+            }
+            document.write("<br>");
+            
+            if(f==0)
+                f=1;
+             else   
+                f=0;   
+        }
+
+        document.write('</div>');
+
+
+        // var node = document.createElement("div");    
+        //  node.classList.add("piece");
+             
+                       
+        // document.getElementById("board").appendChild(node);    
+    
+    
+    </script>
+</head>
+<body>
+    
+
+
+    
+
+</body>
+</html>

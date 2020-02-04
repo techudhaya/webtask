@@ -1,0 +1,40 @@
+
+/*
+precedence order id -->class --> type selector*/
+
+/* specificity weights 0-0-0 */
+
+/*over with specific weights*/
+#para{
+	background: purple;
+}
+
+
+
+p{
+	font-size: 20px;
+	color:pink;
+
+}
+
+
+
+/*overriding the p selector*/
+p{
+	color:grey;
+  background: rgb(15, 29, 59);
+}
+
+
+.btn{
+	border: 5px solid gray;
+
+}
+
+.btn-danger{
+	color:red;
+}
+
+.btn-success{
+	color:green;
+}

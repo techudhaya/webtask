@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>row and column swap</title>
+
+    <style>
+    
+    table{
+        margin:10%;
+    }
+
+    td{
+        height: 5vh;
+        width:5vh;
+        padding:3%;
+        border:2px solid black;
+        margin: 2px;
+    }
+    
+
+    nav{
+        border:3px solid grey;
+        position: absolute;
+        top:100px;
+        right: 100px;
+        width:20%;
+        padding:3%;
+
+    }
+
+    button{
+        display: block;
+        width:100%;
+        box-sizing: border-box;
+    }
+
+    button:nth-of-type(2){
+        display: inline-block;
+        width:48%;
+    }
+    button:nth-of-type(3){
+        display: inline-block;
+        width:48%;
+    }
+
+    </style>
+
+</head>
+<body>
+    <div class="left">
+        size:<input type="number" name="size">
+        <button type="button" name="create" onclick="size()">create</button>
+        <button type="button" name="up" onclick="swap()">swap</button>
+        </div>
+        
+
+        <nav>
+            <button onclick="up(this.value)" value="up" >up</button>
+            <button onclick="left(this.value)" value="left">left</button>
+            <button onclick="right(this.value)" value="right">right</button>
+            <button onclick="down(this.value)" value="down">down</button>
+        </nav>
+
+   </section>
+
+
+    <script>
+
+      
+var number=1;
+        var r=4;
+        var c=4;
+        
+        function chess(n){
+                var table=document.createElement("table");
+                for(i=1;i<=n;i++){
+                      row=document.createElement("tr");
+                    for(j=1;j<=n;j++){  
+                        block(i,j,row);
+                    }
+                    table.appendChild(row);
+                }
+                document.body.appendChild(table);
+            }
+            function block(){
+                let block=document.createElement("td");
+                block.classList.add("structure");
+                block.innerHTML=number;
+                number++;
+                row.appendChild(block);
+            }
+             function size(){
+                 var n=document.getElementsByName("size")[0].value;
+                 chess(n);
+                 
+             }
+        hilight();
+
+        function hilight(){
+
+            // reset
+            var s=document.querySelectorAll("td");
+            
+            for(i=0;i<s.length;i++){
+                s[i].style.backgroundColor="white";
+            }
+
+            // row traversal
+            var row=document.querySelectorAll(`tr:nth-of-type(${r+1}) td`);
+            for(i=0;i<row.length;i++){
+                row[i].style.backgroundColor="cyan";
+            }
+
+            //column traversal
+            var column=document.querySelectorAll(`tr td:nth-of-type(${c+1})`);
+            for(i=0;i<column.length;i++){
+                column[i].style.backgroundColor="cyan";
+            }
+        }
+
+
+
+
+        function up(dir){
+            swapY(dir);
+            r--;
+            
+            if(r<0) r=4;
+
+            
+
+            hilight();
+        }
+
+        function down(dir){
+            swapY(dir);
+            r++;
+            r=r%5;
+
+            hilight();
+
+        }
+
+        function left(dir){
+            swapX(dir);
+            c--;
+            if(c<0) c=4;
+
+            hilight();
+
+        }
+
+        function right(dir){
+            swapX(dir);
+
+            c++;
+            c=c%5;
+
+            hilight();
+
+        }
+
+
+
+
+        function swapY(dir){
+
+                        
+            if(dir=="up"){
+
+                    var pr=r-1;
+                    
+                    if(pr==-1){
+                        pr=4;
+                }
+            }
+
+            if(dir=="down"){
+
+                    var pr=r+1;
+                    
+                    if(pr==5){
+                        pr=0;
+                }
+
+            }      
+
+        
+            var x=document.getElementsByTagName("table")[0].rows[r].innerHTML;
+            var y=document.getElementsByTagName("table")[0].rows[pr].innerHTML;
+            document.getElementsByTagName("table")[0].rows[pr].innerHTML=x;
+            document.getElementsByTagName("table")[0].rows[r].innerHTML=y;
+
+
+        }
+
+
+
+
+    function swapX(dir){
+
+            if(dir=="left"){
+
+                var pr=c-1;
+
+                if(pr==-1){
+                    pr=4;
+                }
+            }
+
+            if(dir=="right"){
+
+                var pr=c+1;
+
+                if(pr==5){
+                    pr=0;
+                }
+
+            }  
+
+
+        for(i=0;i<5;i++)
+        {
+            
+            var x=document.getElementsByTagName("table")[0].rows[i].cells.item(c).innerHTML;
+            var y=document.getElementsByTagName("table")[0].rows[i].cells.item(pr).innerHTML;
+            document.getElementsByTagName("table")[0].rows[i].cells.item(pr).innerHTML=x;
+            document.getElementsByTagName("table")[0].rows[i].cells.item(c).innerHTML=y;
+        }
+
+
+
+    }
+
+        
+        
+    
+    
+    </script>
+    
+</body>
+</html>

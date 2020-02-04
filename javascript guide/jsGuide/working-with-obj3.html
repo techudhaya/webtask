@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>working with object 3</title>
+</head>
+<body>
+
+
+
+    <script>
+        
+        // function acting as class
+
+        function fclass(name,loc){
+
+            this.name=name;
+            this.loc=loc;
+            this.world="earth";
+            this.detail=function(){
+                return this.name+"--"+this.loc+" "+this.world+this.origin;
+            }
+        }
+
+        fclass.prototype.origin="universe";         //  adding the property to the fclass
+
+        fclass1= new fclass("charile","pluto");
+        fclass2= new fclass("mark","africa");
+
+        console.log(fclass1.detail());
+        console.log(fclass2.detail());
+
+
+        console.log("");
+
+
+
+
+
+
+        // using object literal
+
+        var lobject1={                              ///  directly creating the object
+            name:'harry potter',
+            loc:'hogwards',
+            detail: function(){
+                return this.name+"-->"+this.loc;
+            }
+        }
+
+        var lobject2=new Object();                 ///  creating object from Object()
+            lobject2.name="dracula";
+            lobject2.loc="darkland";
+            lobject2.detail=function(){ return this.loc+"-->>"+this.name; };
+
+
+        
+        var lobject3=Object.create(lobject1);
+            lobject3.xtra="xtra properties";
+
+
+
+        console.log(lobject1.name);
+        console.log(lobject2.name);
+        console.log(lobject3.xtra);
+
+
+
+        // using class
+
+
+        class CLASS{
+
+            constructor(){
+                this.name="nameas clsss";
+                this.loc="loc in the classs";
+            }
+
+            detailss(){
+                return "the detail of the class "+this.loc;
+            }
+        }
+
+
+        class subCLASS extends CLASS{
+            constructor(){
+                super();
+                this.world="sub world";
+            }
+
+            detailss2(){
+                return "--> "+this.name+" "+this.world;
+            }
+        }
+
+         var CLASS1 =new subCLASS();
+
+        console.log(CLASS1.loc)
+        console.log(CLASS1.detailss2())
+
+
+
+
+
+
+
+        //////
+
+            const Animal = {
+            speak() {
+                    console.log(`${this.name} makes a noise.`);
+                }
+            };
+
+            class Dog {
+                constructor(name) {
+                    this.name = name;
+                }
+            }
+
+            // If you do not do this you will get a TypeError when you invoke speak
+            Object.setPrototypeOf(Dog.prototype, Animal);
+
+            let d = new Dog('Mitzie');
+            d.speak(); // Mitzie makes a noise.
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

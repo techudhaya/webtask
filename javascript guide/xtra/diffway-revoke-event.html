@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSevents</title>
+
+    
+    <script >
+
+        function alerting(){
+            alert("you clicked");
+        }
+
+    </script>
+    
+</head>
+<body >
+
+    <div id="print">this is a div</div>
+
+    <button onclick="touch()">touch</button>                        <!--calling the event withing the html-->
+
+
+    <input type="text" id="fname">
+
+      
+
+
+        <script>
+        
+        // java script function
+        function touch(){
+         
+            document.getElementById("print").innerHTML="clicky clicked";
+        }
+
+
+
+        // calling click event within js object method
+        document.getElementById("fname").onclick = function() {alerting()};
+
+
+        // calling using addEventListener 
+        // In this on is remove from event calling
+        document.getElementById("fname").addEventListener("focus",function(){ document.getElementById("print").innerHTML="addEventListener" } );
+        
+     
+        </script>
+
+
+
+
+    
+</body>
+</html>

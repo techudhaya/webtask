@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chess2</title>
+</head>
+<body>
+    <section id="board"></section>
+    <script>
+        var board=document.getElementById("board");
+        board.style.cssText="border:10px solid grey;display:inline-block;";
+
+        for(var i=0;i<8;i++){
+            for(var j=0;j<8;j++){
+
+                var node=document.createElement("div");     
+                    node.classList.add("box");
+                    node.style.cssText="height:5vw; width:5vw; display:inline-block";
+
+                if((i+j)%2==0)
+                    node.style.cssText="height:5vw; width:5vw; display:inline-block; background-color:purple";
+            
+                board.appendChild(node);
+            }
+            board.appendChild(document.createElement("div"));
+        }
+</script>
+</body>
+</html>

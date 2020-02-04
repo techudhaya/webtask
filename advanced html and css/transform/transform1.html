@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform 1</title>
+
+    <style>
+        .box-1{
+            height: 100px;
+            width:100px;
+            margin-bottom: 40px;
+            background-color: skyblue;
+            transform: scale(1.5) skewX(10deg);
+          
+
+        }
+     
+        .box-2{
+            height: 100px;
+            width:100px;
+            background-color:slateblue;
+
+            /* rotate turn the object and scale increase the object size */
+            transform: rotate(20deg);
+            transform: rotate(25deg) scale(.75);
+            transform-origin: 100px 200px;
+
+
+        }
+
+        .box-3{
+            height: 100px;
+            width:100px;
+            background-color:slateblue;
+            /* translate move in x y z axis */
+            transform:translate(500px,30px) scaleX(1.5); /* combining transform */
+
+
+           
+        }
+    
+    </style>
+
+    
+</head>
+<body>
+
+    <figure class="box-1">Box 1 scale 1.5</figure>
+    <figure class="box-2">Box 2 rotate 20deg and scale 0.75</figure>
+    <figure class="box-3">Box 3</figure>
+
+    
+</body>
+</html>

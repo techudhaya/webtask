@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>separating structure and skin</title>
+        <style>
+        
+        /* separating structure from skin for better usuability */
+        .button {
+        background: #FAF;
+        
+        }
+
+        .button-2 {
+            background: #000;
+        }
+
+        .skin {
+            width: 150px;
+            height: 50px;
+            display: block;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        /* separation of content from the container */
+        /* Avoiding child selectors is a good strategy for maintaining separation between content and containers. Be sure to bestow unique classes to unique elements. */
+
+        .container{
+            background: linear-gradient(cyan,yellow);
+            width: 30%;
+            padding: 10px;
+
+        }
+
+        .list{
+            color:white;
+            margin:100px;
+            border:2px dashed grey;
+            padding:10px
+
+        }
+
+        </style>
+    </head>
+    <body>
+
+
+        <!-- structure and skin -->
+        <a class="button skin" href="#">Home</a>
+        <a class="button-2 skin" href="#">Blog</a>
+
+
+        <!-- content and container -->
+        <div class="container">
+            <div class="list">
+
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+
+            </div>
+        </div>
+
+
+    </body>
+</html>

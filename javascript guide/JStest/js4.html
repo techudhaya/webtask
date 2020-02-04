@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js4</title>
+</head>
+<body>
+
+   <div id="outer">
+
+        <button onclick="disp()">button</button>
+   </div>
+
+    <script>
+        
+
+        function disp(){
+
+           
+            var outer=document.getElementById("outer"); // outer container
+
+            var para=document.createElement("p");    // single reference
+                para.textContent="paragraph";
+
+            // var span=document.createElement("span");
+            //     span.textContent="span";
+            var hr  =document.createElement("hr")
+
+            for(var i=0;i<3;i++){
+                outer.appendChild(document.createElement("span"));
+                outer.appendChild(para)
+            }
+
+
+        }
+        
+        
+    </script>
+    
+</body>
+</html>

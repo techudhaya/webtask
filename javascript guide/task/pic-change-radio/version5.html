@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio-pic change version2</title>
+
+    <style>
+    
+        img{
+            width: 30%;
+
+            border:5px solid grey;
+            margin-left: 40%;
+
+        }
+
+
+        section{
+            display: flex;
+            padding:10%;
+
+            margin:5%;
+            border:10px double black;
+        }
+
+
+        input[type="radio"]:checked {
+            background-color:green;
+        }
+      
+    
+    </style>
+</head>
+<body>
+
+    <section>
+
+      <div id="picture">
+            <input  id="one" type="radio" name="pic" value="square" checked > square<br>
+            <input id="two" type="radio" name="pic" value="triangle" > triangle<br>
+            <input id="three" type="radio" name="pic" value="circle"> circle<br>
+    
+             <img src="square.png">
+      </div>
+    </section>
+
+    
+</body>
+</html>

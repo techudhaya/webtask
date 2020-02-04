@@ -1,0 +1,153 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+
+body{
+    background-color:navajowhite;
+    
+}
+
+
+/* header */
+
+header{
+
+    background-color: salmon;
+    color:silver;
+    text-align:center;
+    padding:2%;
+    font-size: 1.5em;
+    animation: mymove 10s infinite;
+}
+
+header:hover{
+    color:white;
+}
+
+@keyframes mymove {
+    0% {background-color:crimson;}
+    50%{background-color: rgb(28, 28, 161);}
+    75% {background-color:salmon;}
+    100%{background-color: purple;}
+  }
+
+
+
+
+
+
+/* aside */
+
+aside{
+    background-color: #2e96d2;
+    height: 100vh;
+    width:20vw;
+    position: sticky;
+    top:0px;
+    float: left;
+
+}
+
+/* .logo{
+    font-size:5em;
+    color:silver;
+    background-color: salmon;
+  
+    text-align:center;
+  
+} */
+
+ul{
+
+    margin-top:30%;
+}
+
+li{
+    padding:2%;
+    text-align:center;
+    font-size: 1.5em;
+    color:silver;
+    list-style-type: none;
+    font-size: 2em;
+    border-radius: 10px;
+    border:1px dashed darkgrey;
+    margin:5% 0;
+}
+
+li:hover{
+    background-color:grey;
+    color:#2e96d2;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+
+
+/* section  */
+
+section{
+    background-color:royalblue;
+    width:80vw;
+    /* margin-left:20vw; */
+    float: left;;
+}
+
+section h1{
+    text-align:center;
+    color:silver;
+    background-color: cornflowerblue;
+    border-radius: 20px;
+    padding:2%;
+    font-size: 2em;
+}
+
+.article-container{
+    display:flex;
+    flex-flow:wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    flex-direction: row-reverse;
+}
+
+
+article{
+    display: inline-block;
+    margin:2%;
+    padding:2%;
+    border:2px dashed grey;
+    font-size: 1.5em;
+    width:300px;
+    overflow: scroll;
+
+
+}
+
+article img{
+    height: 5em;
+    width: 7em;
+    float:left;
+    margin:5%;
+    background-size:contain;
+    border:2px dashed black;
+}
+
+
+
+
+/* footer */
+
+
+footer{
+    background-color: slateblue;
+    color:silver;
+    padding:90px;
+    text-align:center;
+    clear:both;
+    font-size:2em;
+    margin-left: 20vw;
+}

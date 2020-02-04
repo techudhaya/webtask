@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>row and column swap</title>
+
+    <style>
+    
+    table{
+        margin:10%;
+    }
+
+    td{
+        height: 5vh;
+        width:5vh;
+        padding:3%;
+        border:2px solid black;
+        margin: 2px;
+    }
+    
+
+    nav{
+        border:3px solid grey;
+        position: absolute;
+        top:100px;
+        right: 100px;
+        width:20%;
+        padding:3%;
+
+    }
+
+    button{
+        display: block;
+        width:100%;
+        box-sizing: border-box;
+    }
+
+    button:nth-of-type(2){
+        display: inline-block;
+        width:48%;
+    }
+    button:nth-of-type(3){
+        display: inline-block;
+        width:48%;
+    }
+
+    </style>
+
+</head>
+<body>
+
+    <section>
+
+        <table>
+
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            
+            <tr>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr> 
+            <tr>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+            </tr> 
+            <tr>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+            </tr> 
+            <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+            </tr> 
+
+        </table>
+
+        <nav>
+            <button onclick="up()" >up</button>
+            <button onclick="left()">left</button>
+            <button onclick="right()">right</button>
+            <button onclick="down()">down</button>
+        </nav>
+
+   </section>
+
+
+    <script>
+
+      
+
+        var r=4;
+        var c=4;
+
+        hilight();
+
+        function hilight(){
+
+            // reset
+            var s=document.querySelectorAll("td");
+            
+            for(i=0;i<s.length;i++){
+                s[i].style.backgroundColor="white";
+            }
+
+            // row traversal
+            var row=document.querySelectorAll(`tr:nth-of-type(${r+1}) td`);
+            for(i=0;i<row.length;i++){
+                row[i].style.backgroundColor="cyan";
+            }
+
+            //column traversal
+            var column=document.querySelectorAll(`tr td:nth-of-type(${c+1})`);
+            for(i=0;i<column.length;i++){
+                column[i].style.backgroundColor="cyan";
+            }
+        }
+
+
+
+
+        function up(){
+            swap();
+            r--;
+
+            if(r<0) r=4;
+
+            
+
+            hilight();
+        }
+
+        function down(){
+            r++;
+            r=r%5;
+
+            hilight();
+
+        }
+
+        function left(){
+            swap();
+            c--;
+            if(c<0) c=4;
+
+            hilight();
+
+        }
+
+        function right(){
+            c++;
+            c=c%5;
+
+            hilight();
+
+        }
+
+
+
+        function swap(){
+
+            for(i=0;i<5;i++)
+            {
+                
+                var x=document.getElementsByTagName("table")[0].rows[i].cells.item(c).innerHTML;
+                var y=document.getElementsByTagName("table")[0].rows[i].cells.item(c-1).innerHTML;
+                document.getElementsByTagName("table")[0].rows[i].cells.item(c-1).innerHTML=x;
+                document.getElementsByTagName("table")[0].rows[i].cells.item(c).innerHTML=y;
+            }
+
+            
+
+        }
+        
+    
+    
+    </script>
+    
+</body>
+</html>

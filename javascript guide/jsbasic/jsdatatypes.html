@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js datatypes</title>
+
+    <script>
+    
+        var a=12;       // number
+        var b="sting";  // string    
+        var c="true";  // boolean
+
+        var arr=[1,2,3,"aa","bb"];  //array
+
+        var Car={    //object
+             name :"ferrai",
+             model: "11.0",
+            autopilot: function(){
+
+                document.write("auto pilot on")
+            }
+
+        };
+
+        Car.price="$3000" // adding properties to the object
+        delete Car.model; // delete the properties from the object
+
+
+
+
+
+        document.write(Car.price+"<br>");
+        Car.autopilot();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

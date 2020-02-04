@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grammar types</title>
+</head>
+<body>
+    
+
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+
+    <p>This is a paragraph.</p>
+
+
+
+   
+
+
+ 
+
+
+    <script>
+
+        var A=2; // block and global level
+        let B=3; // only block level
+        const C=4; // values cannot be altered
+
+
+
+    if(1){
+        var x=6
+        console.log(x)
+    }    
+    
+    console.log(y)
+     var y=2
+
+     
+
+     function f1(){
+         console.log("one")
+     }
+
+     function f2(){
+         console.log("two");
+         
+     }
+
+
+     f2();
+     f1();
+    
+    
+     var obj={  'one':'this is one',
+                'two':'this can be two',
+                key:'value of the key'
+            };
+
+
+    var obj2= {  two:'this is one',
+                two:'this can be two',
+                second:{aa:'apple',bb:'ball'},
+                key:'value of the key'
+            };
+       
+
+
+
+
+            console.log(obj.key)  
+            console.log(obj['key'])  
+
+            console.log(obj["two"])  
+            
+            console.log(obj2.second.bb);       
+            
+            first="car";
+
+            //template literal
+            var s=`this is${first}`;
+
+            console.log(s)
+
+
+
+            // destructiong
+            var arry=[2,4,6];
+
+            var [a, b, c]=arry;
+
+            console.log(b)
+
+
+            var condt=(b>4)? console.log('x'): console.log('y');
+
+            //spread operator
+
+            var parts = ['shoulders', 'knees'];
+            var lyrics = ['head', ...parts, 'and', 'toes'];
+
+        console.log(lyrics)
+      
+
+    
+    
+    </script>
+
+
+</body>
+</html>

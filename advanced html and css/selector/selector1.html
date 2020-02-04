@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector 1</title>
+
+
+
+    <style>
+        
+        /* universal selector */
+        *{
+            color:indigo;
+        }
+
+        p *{
+            color:lawngreen;
+        }
+
+
+
+
+        /* type selector */
+        span{
+            background-color:lightcoral ;
+        }
+
+
+
+
+        /* class and id selector */
+        .CLASS{
+            background-color: steelblue;
+
+        }
+
+        #ID{
+            color:tomato;
+        }
+        
+
+
+
+        /* attribute selector */
+        
+        [type="password"]{
+            background-color: slateblue;
+        }
+
+        input[type="text"]{
+            background-color:gold
+        }
+
+        /* contain */
+        a[href*="googlee"]{
+            color:red;
+        }
+
+        /* end */
+        a[href$="com/"]{
+            color:green;
+        }
+        /* begin */
+        a[href^="begin"]{
+            color:blue;
+        }
+
+      
+    </style>
+
+</head>
+<body>
+
+    <p class="warning">
+        <span >  span1</span> in a red paragraph.
+        <span >  span2</span> in a red paragraph.
+        <span > span3</span> in a red paragraph.
+
+      </p>
+
+      <div id="maincontent" >
+        <span class="CLASS">A  span1 selected with class</span> in a blue paragraph.
+        <span id="ID">A  span2 selected with id</span> in a blue paragraph.
+
+    </div>
+
+    <br>
+
+    <!-- attribute selector -->
+    <input type="text" name="input1">
+
+    <input type="password" name="input1">
+
+    
+    <div><a href="http://googlee.come/">first link ------> href*="com"</a></div>
+    <div><a href="www.http://google.com/">second link ------></a></div>
+
+    <div><a href="beginhttp://google.com/">third link ------->href^="begin" </a></div>
+
+
+    <div><a href="www.http://google.com/">fourth link -----></a></div>
+
+
+
+
+</body>
+</html>

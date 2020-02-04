@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document write</title>
+</head>
+<body  >
+    
+
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+    <p>This is a paragraph.</p>
+
+    <p onclick="newdoc()">This is a paragraph.</p>
+
+
+
+
+
+ 
+
+
+    <script>
+
+        // document.open();
+        document.write("first para");
+        document.write("second para");
+        document.write("third para");
+
+        // document.close();
+        
+        
+        
+    </script>   
+
+
+    <script>
+    
+        function newdoc(){
+            // open document.open() it called implicitly and clear the screen
+            document.write("four para");  // clear the document and newly print it becuase its called after reload
+        }
+        
+    
+    
+    </script>
+
+
+</body>
+</html>

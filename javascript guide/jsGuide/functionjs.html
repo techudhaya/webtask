@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function js</title>
+</head>
+<body>
+
+
+    <script type="text/javascript">
+        
+
+    //passing parameter
+    function calculate(a,b){
+        return a*b;
+    }
+
+    //passing array
+    function array(arry){
+        for(var i=0;i<arry.length;i++)
+            console.log(arry[i]);
+    }
+
+    // passing object as parameter
+    function myobject(obj){
+        for(i in obj)
+            console.log(i+" "+obj[i]);
+    }
+
+    //anonymous function
+
+    var anonymous=function(x){
+        return x+x;
+    }
+
+
+    //nested function
+
+    function outside(){
+
+        function inside(){
+            return "inside function";
+        }
+
+         return inside();
+
+    }
+
+
+    //in function calling directly
+
+    function out(a){
+        function inn(b){
+
+            return b+1;
+            
+        }
+        return inn;
+    }
+
+    //rest parameter
+
+    function addt(add_value,...other_number){
+        return other_number.map(x => x+add_value) // add the value with the passed number
+    }
+        
+    </script>
+
+
+
+    <script>
+    
+        console.log(calculate(3,2));
+
+        array([1,35,4,"ff"])
+
+        object={a:"apple",b:'bat',c:'cat'};
+        myobject(object);
+
+
+        console.log(anonymous(4));
+
+        console.log(outside());
+
+
+        console.log(out()(2))
+
+
+        console.log(addt(5,1,2,4,6))
+    
+    </script>
+
+
+    
+</body>
+</html>

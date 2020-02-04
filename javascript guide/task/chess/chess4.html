@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>chess board 4</title>
+        <style>
+        
+        section{
+            border: 5px solid black;
+            display: inline-block;
+      
+        }
+
+
+        span{
+            display:inline-block;
+            width: 5vh;
+            height: 5vh;
+        }
+        
+        </style>
+
+    </head>
+    <body>
+        <script>
+            
+            var table=document.createElement("section");
+
+            for (var i=1; i <=4; i++) {
+                var tr = document.createElement('div');
+
+                    for (var j=1; j<=4; j++) {
+                        var td = document.createElement('span');
+                            td.setAttribute("style","background-color:white");
+                            tr.appendChild(td);
+
+                            var td = document.createElement('span');
+                            td.setAttribute("style","background-color:orange");
+                            tr.appendChild(td);
+
+                        }
+                table.appendChild(tr);
+
+
+                var tr = document.createElement('div');
+
+
+                    for (var j=1; j<=4; j++) {
+                    var td = document.createElement('span');
+                        td.setAttribute("style","background-color:orange");
+                        tr.appendChild(td);
+
+                        var td = document.createElement('span');
+                        td.setAttribute("style","background-color:white");
+                        tr.appendChild(td);
+
+                    }
+
+                table.appendChild(tr);
+            }
+            document.body.appendChild(table); 
+
+
+            function odd(){
+
+                for (var j=1; j<=4; j++) {
+                    var td = document.createElement('span');
+                        td.setAttribute("style","background-color:white");
+                        tr.appendChild(td);
+
+                        var td = document.createElement('span');
+                        td.setAttribute("style","background-color:orange");
+                        tr.appendChild(td);
+
+                    }
+
+            }
+
+            function even(){
+
+                for (var j=1; j<=4; j++) {
+                    var td = document.createElement('span');
+                        td.setAttribute("style","background-color:white");
+                        tr.appendChild(td);
+
+                    var td = document.createElement('span');
+                        td.setAttribute("style","background-color:orange");
+                        tr.appendChild(td);
+
+    }
+
+}
+            
+         </script>
+    </body>
+</html>

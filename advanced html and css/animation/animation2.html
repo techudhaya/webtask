@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation 2 robot animation </title>
+
+    <style>
+    
+        /* missile animation */
+        .missile{
+            height: 200px;
+            width : 100px;
+            transition:1s 0s ease-in;
+            display:block;
+            /* transform: rotate(90deg); */
+
+        }
+
+        .missile:hover{
+            transform: translateX(1000px) scale(0.5) rotate(90deg);
+        }
+
+
+      
+
+        /* robot animation */
+        .robot{
+            height: 200px;
+            width : 100px;
+            margin-top: 200px;
+            margin-left:500px;
+            transition: transform 2s;
+        }
+
+        .robot:hover{
+            transform:translateX(500px) scale(2.0);
+        }
+
+
+        /* animation using keyframes */
+        .missile2:active{
+            
+            animation-name:launch;
+            animation-duration:2s;
+            animation-direction:normal;
+            animation-iteration-count: infinite;
+            /* animation-fill-mode:both; to control the element that goes out of the screen */
+        }
+
+        @keyframes launch{
+
+            0%{
+                transform: translateX(1000px);
+
+            }
+
+            100%{
+                transform: rotate(90deg);
+
+            }
+        }
+
+        
+
+    
+    </style>
+</head>
+<body>
+    
+
+    <div class="obj">
+        <img class="robot" src="robot.jpeg">
+    </div>
+
+
+    <img class="missile missile1" src="missile.jpg">
+    <img class="missile missile2 m" src="missile.jpg">
+    <img class="missile missile3" src="missile.jpg">
+    <img class="missile missile3" src="missile.jpg">
+    <img class="missile missile3" src="missile.jpg">
+    
+
+
+</body>
+</html>

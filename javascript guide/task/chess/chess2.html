@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chess2</title>
+
+    <style>
+    
+       #board{
+           border:10px solid grey;
+           display:inline-block;
+           
+       }
+
+       .black,.white{
+           height: 5vw;
+           width: 5vw;
+           display:inline-block;
+       }
+
+       .black{
+            background-color: rgb(167, 82, 14);
+       }
+       .row-break{
+           display: block;
+       }
+    
+    
+    
+    </style>
+</head>
+
+
+<body>
+
+    <section id="board">
+
+
+    </section>
+    
+
+    <script>
+
+
+        (function(){
+
+        var board=document.getElementById("board");
+    
+
+        for(var i=0;i<8;i++){
+            for(var j=0;j<8;j++){
+
+                var b=document.createElement("div");
+                b.classList.add("row-break");
+
+                var node=document.createElement("div");
+
+                if((i+j)%2==0)
+                    node.classList.add("black");
+                else    
+                    node.classList.add("white")    
+
+                board.appendChild(node);
+
+            }
+
+            board.appendChild(b);
+        }
+
+    })();
+
+</script>
+
+</body>
+</html>

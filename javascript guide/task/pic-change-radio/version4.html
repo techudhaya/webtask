@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio-pic change version2</title>
+
+    <style>
+    
+        img{
+            width: 30%;
+
+            border:5px solid grey;
+            margin-left: 40%;
+
+        }
+
+
+        section{
+            display: flex;
+            padding:10%;
+
+            margin:5%;
+            border:10px double black;
+        }
+
+      
+    
+    </style>
+</head>
+<body>
+
+    <section>
+
+        <div id="picture" >
+            <input id="0" type="radio" name="pic" value="square" checked onclick="pict(this)"> square<br>
+            <input id="1" type="radio" name="pic" value="triangle" onclick="pict(this)"> triangle<br>
+            <input id="2" type="radio" name="pic" value="circle" onclick="pict(this)"> circle
+
+        </div>
+
+        <img  src="square.png">
+        <img  src="triangle.png">
+        <img  src="circle.png">
+
+    </section>
+
+
+    <script>
+        
+        var img=document.getElementsByTagName("img");
+
+        for(var i=0;i<img.length;i++){
+                img[i].style.display="none";
+            }
+
+        function pict(THIS){
+
+            for(var i=0;i<img.length;i++){
+                img[i].style.display="none";
+            }
+          
+            img[parseInt(THIS.id)].style.display="inherit";
+            
+        }
+    </script>
+    
+</body>
+</html>

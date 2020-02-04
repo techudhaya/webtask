@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>relative units</title>
+
+  
+
+    <style>
+        
+        .container{
+            background-color:grey;
+            width: 100%;
+        
+        }
+
+        /* clearfix to make the container contain the float element */
+        /* clear:left make content to come in next line */
+        .container::after{      
+            content:" ";
+            clear:both; 
+            display: block;  
+        }
+
+
+        /* relative length calculation--> (target / parent )length = result length */
+        section{
+            background-color:rgb(32, 86, 122);
+
+            float: left;
+            width: 63.197026%;    /* 340px ÷ 538px = .63197026 */   
+        }
+
+        aside{
+            background-color:slateblue;
+            float: right;
+            width: 29.3680297%;  /* 158px ÷ 538px = .293680297 */
+        }
+
+        section,aside{
+            padding:20px 0; 
+            margin: 1.858736059%; /*  10px ÷ 538px = .018587361 */            
+            text-align:center;
+            border-radius:6px;
+        }
+    
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <aside>ASIDE</aside>
+        <section>SECTION</section>
+    
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>row and column swap</title>
+    <link rel="stylesheet" href="version3.css">
+</head>
+<body>
+    <section>
+        <table></table>
+        <script>
+            var cc=1;                        
+            var table=document.getElementsByTagName("table")[0];
+
+            for (var i=1; i <=5; i++) {
+                var tr = document.createElement('tr');
+
+                for (var j=1; j<=5; j++) {
+                    var td = document.createElement('td');
+                        td.textContent=cc++;
+                        tr.appendChild(td);
+
+                    }
+                    table.appendChild(tr);
+                }         
+        </script>
+        <nav>
+            <button onclick="swap(this.value); " value="up" >up</button>
+            <button onclick="swap(this.value); " value="left">left</button>
+            <button onclick="swap(this.value); " value="right">right</button>
+            <button onclick="swap(this.value); " value="down">down</button>
+        </nav>
+   </section>
+    <script>
+        var r=4,c=4;
+        // initial color
+        document.getElementsByTagName("table")[0].rows[r].style.backgroundColor="orange";
+        for(i=0;i<5;i++)
+            document.getElementsByTagName("table")[0].rows[i].cells.item(c).style.backgroundColor="cyan";
+
+        function swap(dir){
+            var f;
+            (dir=="up" || dir=="left") ?   f=-1 : f=1; 
+
+            if(dir=="up" || dir=="down"){
+
+                    var pr=((r+f)+5)%5; 
+            
+                    var x=document.getElementsByTagName("table")[0].rows[r].innerHTML;
+                    var y=document.getElementsByTagName("table")[0].rows[pr].innerHTML;
+                    document.getElementsByTagName("table")[0].rows[pr].innerHTML=x;
+                    document.getElementsByTagName("table")[0].rows[r].innerHTML=y;
+
+                    document.getElementsByTagName("table")[0].rows[r].style.backgroundColor="inherit";
+                    document.getElementsByTagName("table")[0].rows[pr].style.backgroundColor="orange";
+
+                    r=((r+f)+5)%5;
+            }
+            else{
+                var pr=((c+f)+5)%5; 
+
+                for(i=0;i<5;i++)
+                {      
+                    var x=document.getElementsByTagName("table")[0].rows[i].cells.item(c).innerHTML;
+                    var y=document.getElementsByTagName("table")[0].rows[i].cells.item(pr).innerHTML;
+                    document.getElementsByTagName("table")[0].rows[i].cells.item(pr).innerHTML=x;
+                    document.getElementsByTagName("table")[0].rows[i].cells.item(c).innerHTML=y;
+
+                    document.getElementsByTagName("table")[0].rows[i].cells.item(pr).style.backgroundColor="cyan";
+                    document.getElementsByTagName("table")[0].rows[i].cells.item(c).style.backgroundColor="inherit";
+                }
+                c=((c+f)+5)%5;
+            }
+        }
+    </script>   
+</body>
+</html>

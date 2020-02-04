@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<head>
+	
+	<title>lesson8</title>
+
+
+	<style type="text/css">
+
+		h1{
+			text-align: center;
+		}
+
+		ol{
+			maring:30px;
+		}
+		
+		ol,ol li{
+			padding:20px;
+			background: hotpink;
+			list-style:none; ;
+			text-decoration: none;
+
+
+		}
+		li{
+			background-color: indigo !important;
+			margin :10px !important;
+			color:pink;
+		}
+
+		.space{
+			height: 100px;
+		}
+
+		#box{
+
+			padding: 40px;
+			margin: 30px;
+			background: grey;
+			border:2px dashed purple;
+			width: 50%;
+			top:20px;
+			position: relative;
+
+		}
+		#outerbox{
+			height: 200px;
+			width: 60%;
+			background-color: lightblue;
+			position: absolute;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+
+	<H1>list concepts</H1>
+	
+	<ol start="25">
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+		<li>four</li>
+	</ol>
+
+
+	<ol reversed>
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+		<li>four</li>
+	</ol>
+
+
+	<div class="space"></div>
+
+	<dl>
+		<dt>zoho</dt>
+		<dd>it is an company that is somewhere near chennai has leave twice a week</dd>
+
+	</dl>
+
+	<!-- nesting list -->
+	<ul >
+		<li>one </li>
+		<ul>
+			<li>one </li>
+			<li>one </li>
+		</ul>	
+		<li>one </li>
+		<li>one </li>
+			
+	</ul>
+
+	<div class="space"></div>
+	<div class="space"></div>
+
+	<div id="outerbox">
+		<div id="box">box</div>
+	</div>
+
+
+
+	<!-- list-style: type postion img -->
+
+	<!-- box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit; -->
+</body>
+

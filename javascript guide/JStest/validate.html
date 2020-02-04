@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validate</title>
+
+    <style>
+
+        body{
+            background-color: cornflowerblue;
+        }
+
+        form{
+            border: 4px double grey;
+            margin:12% 12%;
+            padding:8%;
+            background-color: darkgray;
+        }
+
+        input{
+            display: block;
+            width:100%;
+            box-sizing: border-box;
+        }
+        button{
+            display: block;
+            border:2px solid black;
+            width: 100%;
+            margin:10% 0;
+        }
+        .status{
+            font-size: 2em;
+            color:grey;
+        }
+
+        div{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <form>
+
+        <label for="name">enter the name</label>
+        <input type="text" id="name" autofocus> 
+
+        <label for="mail">enter mail</label>
+        <input type="email" id="mail"> 
+
+        <button type="button" onclick="validate()">clicky</button>
+
+        <div class="status"></div>
+    </form>
+
+
+    <script>
+
+        function validate(){
+
+           var x= document.getElementById("name").value;
+
+           if(x.length<4){   
+                document.getElementsByClassName("status")[0].textContent="TOO SMALL!!!!";
+                document.getElementsByClassName("status")[0].style.color="crimson";
+
+           }    
+           else{ 
+                document.getElementsByClassName("status")[0].textContent="perfect";
+                document.getElementsByClassName("status")[0].style.color="green";
+
+           }     
+        }
+
+        
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>working with object</title>
+</head>
+<body>
+    
+
+    <script>
+        
+
+        // creating an object1
+
+         var ob1=new Object();
+
+         ob1.name="mewo";
+         ob1.type="cat";
+
+
+         console.log(ob1.name);
+
+        // creating an object2
+
+         var ob2={
+             name:'scooby', 
+             "type":'dog',
+             print: function(){
+                 return "this is "+this.name;
+             }
+        };
+
+         console.log(ob2.print());
+
+         var obj3 = {color: 'red', wheels: 4, engine: {cylinders: 4, size: 2.2}};
+
+         console.log(obj3.engine.size);
+
+
+
+         // Animal properties and method encapsulation
+        var Animal = {
+            type: 'Invertebrates', // Default value of properties
+            displayType: function() {  // Method which will display type of Animal
+                console.log(this.type);
+            }
+        };
+
+        // Create new animal type called animal1 
+        var animal1 = Object.create(Animal);
+        animal1.displayType(); // Output:Invertebrates
+
+        // Create new animal type called Fishes
+        var fish = Object.create(Animal);
+        fish.type = 'Fishes';
+        fish.displayType(); // Output:Fishes
+
+    
+    
+
+        // date
+
+        var d=new Date();
+
+        console.log(d.getFullYear())
+
+
+        //constructor
+
+        function Car(make, model, year, owner) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.owner = owner;
+        }
+
+        var car1=new Car("renault",2,1999,"albrt");
+
+        var  car2=new Car("ferrari",4,"1678","cat");
+
+        console.log(car1.owner)
+
+        console.log(car2)
+
+
+
+
+
+
+    
+    
+    </script>
+
+
+<script> 
+    // function constructor 
+    function Person(name, job, yearOfBirth){ 
+        this.name= name; 
+        this.job= job; 
+        this.yearOfBirth= yearOfBirth; 
+
+    } 
+
+    Person.prototype.disp=function(){
+        return this.name+" "+this.job;
+    }
+
+    p1=new Person("aaa","pilot","1jan");
+    // this will show Person's prototype property. 
+    console.log(p1.disp()); 
+
+
+
+
+    // using prototype with additional prop to date object
+
+    Object.defineProperty(Date.prototype,"tell",
+                                {get:function()
+                                    {    return "this is"+this.getFullYear();  
+                                    }
+                                });
+
+    var d=new Date();
+
+    console.log(d.tell);
+</script> 
+    
+    
+</body>
+</html>

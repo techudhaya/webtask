@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator and expression</title>
+</head>
+<body>
+    
+
+    <input type="text" maxlength="4">
+
+
+
+    <script>
+        
+        var c=1;
+        console.log(++c);
+
+        console.log(parseInt(5/2)); // 2.5 -->2
+        console.log(3**3);
+
+        console.log("")
+
+
+
+        // local vs global
+        var z=4;
+
+        function fun1(){
+            let z=1
+            console.log("inside the function "+z);
+        }
+
+        fun1();
+
+
+
+
+        console.log(z);
+
+        console.log(" ")
+    
+        var arr=[2,1,4,"html","space"];
+
+        delete arr[2];  // delete the index
+
+        if(2 in arr)
+            console.log("present");
+        else    
+            console.log("not present");   
+
+
+       console.log(Date());
+
+       console.log(typeof "ss")
+
+
+       console.log(arr.sort());
+    
+    
+    </script>
+</body>
+</html>

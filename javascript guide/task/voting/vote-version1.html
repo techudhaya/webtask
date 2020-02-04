@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>voting version 1</title>
+
+    <style>
+    
+
+        h1{
+            text-align: center;
+            padding: 10px;
+            box-shadow: 5px 10px #888888;
+            width: 80;
+        }
+
+        section{  
+            padding:5%;
+            margin:5%;
+
+        }
+
+        form{
+            background-image: url("back2.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+
+        }
+
+        article{
+
+            border:2px solid grey;
+
+            padding:10%;
+
+            position: absolute;
+            top:40%;
+            right: 10%;
+        }
+        
+        article div{
+            border:2% dashed grey;
+        }
+
+
+
+        label{
+            border:2px solid grey;
+            display: inline-block;
+            width: 100%;
+            margin:3%;
+            font-size: 1.5em;
+            padding:4%;
+            
+        }
+
+        label:hover{
+            background-color: grey;
+        }
+
+     
+
+        img{
+            width: 5vh;
+            width: 5vh;
+            float:right;
+        }
+
+        section::after{
+            content:"";
+            display: table;
+            clear:both;
+        }
+      
+        form{
+            width: 50%;
+    
+        }
+
+        button{
+            display: inline-block;
+            width: 100%;
+            font-size: 2em;
+            border-radius: 10px;
+        }
+
+        section button{
+            margin-top: 10%;
+        }
+        .popup{
+          display: none;
+            height: 50px;
+            width: 500px;
+            font-size: 30px;
+            text-align: center;
+            text-shadow: 5px 4px 5px;
+            position: fixed;
+            background-color: aliceblue;
+            border: 2px solid black;
+            border-radius: 30px;
+            box-shadow: 10px 5px 5px;
+            margin-left: 35%;
+        }
+    
+
+      
+    
+    </style>
+</head>
+<body>
+    <h1>ELECTION 2020</h1>
+    <div class="popup"> THANKS FOR VOTING   </div>
+
+    <section>
+
+        <form id="voting" >
+            <label>
+                <input type="radio" name="vote" value="BJP" >BJP
+                <img src="bjp.png">
+            </label>
+
+            <label>
+                <input type="radio" name="vote" value="ADMK" > ADMK<br>
+                <img src="admk.png">
+
+            </label>
+
+            <label>
+                <input type="radio" name="vote" value="DMK" > DMK<br>
+                <img src="dmk.png">
+
+            </label>
+
+            <label>
+                <input type="radio" name="vote" value="CONG" > CONG<br>
+                <img src="congress.png">
+
+            </label>
+
+
+            <button type="button" onclick="count()">vote</button>
+
+        </form>
+
+        <button onclick="result()" class="fade">result</button>
+
+
+        <article class='result'>
+
+            
+
+        </article>
+
+
+    </section>
+
+
+    <script>
+
+        var map=new Map();
+        var vote=document.getElementsByName("vote");
+
+        // initial assing
+        for(var i=0;i<vote.length;i++){
+        
+            map.set(vote[i].value,0);      
+    
+        }
+
+        function count(){
+
+  
+
+          
+            var vote=document.getElementsByName("vote");
+
+      
+
+            //increment
+            for(var i=0;i<vote.length;i++){
+                if(vote[i].checked){
+            
+                    map.set(vote[i].value,map.get(vote[i].value)+1);
+                }
+            }
+
+            document.forms[0].reset();
+            
+
+        }
+
+        function result(){
+
+
+            const mapSort = new Map([...map.entries()].sort((a, b) => b[1] - a[1]));
+
+
+            var article=document.getElementsByClassName("result")[0];
+                article.innerHTML="";
+
+            for(let [key,value] of mapSort){
+                var div=document.createElement("div");
+                div.textContent=key+"-->"+value;
+
+                article.appendChild(div);
+
+            }
+
+
+
+        }
+
+    </script>
+    
+</body>
+</html>

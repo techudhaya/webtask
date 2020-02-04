@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>margin collapse</title>
+
+    <style>
+        .one{
+        height:200px;
+        width:400px;
+        background:red;
+        
+        
+        }
+
+        .one{
+        margin:20px;
+        }
+        .two{
+        height:100px;
+        width:100px;
+        background:blue;
+        margin:20px;
+        display:inline-block;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="one">
+        <div class="two"></div>
+       
+        
+      </div>
+      
+      <div class="one">
+        <div class="two"></div>
+        <div class="two"></div>
+        
+      </div>
+
+      <!-- This is due to margin collapsing - the top margins of a block level elements' first child (assuming it's also block level and participates in the normal flow) will always collapse with the top margin of its parent.
+        
+        One way around this is to change the display value of the child div to inline-block. -->
+
+
+</body>
+</html>

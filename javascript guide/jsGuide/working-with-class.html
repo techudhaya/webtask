@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>working with class</title>
+    <style>
+        
+        #phone{
+            background-color:linen;
+            border-radius: 50px;
+            border:10px solid grey;
+
+            height: 50vh;
+            width: 30vh;
+
+            margin:10% 40%;
+        }
+
+        #screen{
+            border-radius: 50px;
+            padding: 10%;
+            background-color:white;
+            border: 3px solid grey;
+            height: 30vh;
+        }
+        #screen input{
+            width: 100%;
+            display: inline-block;
+            height: 5vh;
+            font-size: 1.3em;
+        }
+
+        .button input{
+            width: 80%;
+            margin: 5% 10%;
+            display: inline-block;
+            height: 5vh;
+
+        }
+        
+    </style>
+</head>
+<body>
+
+
+    <section id="phone">
+
+        <div id="screen">
+
+            <input type="text" name="phone_number" placeholder="NUMBER" autocomplete="off">
+            <input type="text" name="message" placeholder="MESSAGE" autocomplete="off">
+
+            <div id="disp"></div>
+
+        </div>
+
+        <div class="button">
+
+            <input type="button" value="CALL" onclick="p.call()">
+            <input type="button" value="MSG"   onclick="p.msg()" >
+        </div>
+
+
+    </section>
+
+
+
+    <script>
+        
+        class phone{
+
+            constructor(){
+                this.phone_number=1234567890;
+            }
+            
+            call(){
+                this.phone_number=document.getElementsByName("phone_number")[0].value;
+
+                console.log("message sent to"+this.phone_number);
+
+            }
+
+
+             msg(){
+
+                console.log("message sent to");
+
+            }
+        }    
+
+        var p=new phone();
+    
+    
+    
+    </script>
+    
+</body>
+</html>

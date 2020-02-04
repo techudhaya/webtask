@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>different way to select the element</title>
+
+
+
+
+</head>
+<body>
+
+
+    <div class="myclass">example 1</div>
+
+    <div id="myid">example 2</div>
+
+    <button onclick="clicked()" ondblclick="dblclicked()" onmouseover="hovered()" >this is para 1</button>
+
+ 
+
+    <script type="text/javascript">  
+
+        function clicked(){
+            document.querySelectorAll("div")[0].innerHTML="change by querySelectorAll";
+        }
+        
+        function dblclicked(){
+
+            document.getElementsByClassName("myclass")[0].style.color="red";
+        }
+
+        function hovered(){
+            document.getElementById("myid").innerHTML="hovered";
+        }
+        
+    </script>
+    
+</body>
+</html>

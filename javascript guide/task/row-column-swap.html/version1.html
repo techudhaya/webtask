@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>row and column swap</title>
+
+    <style>
+    
+  
+
+    span{
+        height: 5vh;
+        width:5vh;
+        display: inline-block;
+        padding:3%;
+        border:2px solid black;
+        margin: 2px;
+    }
+    
+
+    nav{
+        border:3px solid grey;
+        position: absolute;
+        top:100px;
+        right: 100px;
+        width:20%;
+        padding:3%;
+
+    }
+
+    button{
+        display: block;
+        width:100%;
+        box-sizing: border-box;
+    }
+
+    button:nth-of-type(2){
+        display: inline-block;
+        width:48%;
+    }
+    button:nth-of-type(3){
+        display: inline-block;
+        width:48%;
+    }
+
+    </style>
+
+</head>
+<body>
+
+    <section>
+
+        <div>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+        
+        <div>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+        </div> 
+        <div>
+            <span>11</span>
+            <span>12</span>
+            <span>13</span>
+            <span>14</span>
+            <span>15</span>
+        </div> 
+        <div>
+            <span>16</span>
+            <span>17</span>
+            <span>18</span>
+            <span>19</span>
+            <span>20</span>
+        </div> 
+        <div>
+            <span>21</span>
+            <span>22</span>
+            <span>23</span>
+            <span>24</span>
+            <span>25</span>
+        </div> 
+
+
+        <nav>
+            <button onclick="up()" >up</button>
+            <button onclick="left()">left</button>
+            <button onclick="right()">right</button>
+            <button onclick="down()">down</button>
+        </nav>
+
+
+
+
+    </section>
+
+
+    <script>
+
+      
+
+        var r=5;
+        var c=5;
+
+        hilight();
+
+        function hilight(){
+
+            // reset
+            var s=document.querySelectorAll("span");
+            
+            for(i=0;i<s.length;i++){
+                s[i].style.backgroundColor="white";
+            }
+
+            // row traversal
+            var row=document.querySelectorAll(`div:nth-of-type(${r}) span`);
+            for(i=0;i<row.length;i++){
+                row[i].style.backgroundColor="cyan";
+            }
+
+            //column traversal
+            var column=document.querySelectorAll(`div span:nth-of-type(${c})`);
+            for(i=0;i<column.length;i++){
+                column[i].style.backgroundColor="cyan";
+            }
+        }
+
+        function up(){
+            r--;
+
+            hilight();
+        }
+
+        function down(){
+            r++;
+            hilight();
+
+        }
+
+        function left(){
+            c--;
+            hilight();
+
+        }
+
+        function right(){
+            c++;
+            hilight();
+
+        }
+
+
+        
+    
+    
+    </script>
+    
+</body>
+</html>

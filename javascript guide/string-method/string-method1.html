@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string method 1</title>
+
+    <script>
+        //     0123456789
+        var s="hello world only world";
+
+        document.write(s+"<br>");                      // print the string
+
+        document.write(s.length+"<br>");       //print the length of the string
+
+        document.write(s.indexOf("world")+"<br>"); // print the starting index of the location
+
+        document.write(s.indexOf("world",7)+"<br>"); // search start from the 7 postion
+
+        document.write(s.search("world")+"<br>");      // cannot take second parameter but used for reg expr
+
+        document.write(s.slice(6,11)+"<br>");           //print the string from index 6 to 11-1 similar to python
+
+        document.write(s.substring(6,11)+"<br>");           // similar to slice cannot accpt negative values
+
+        document.write(s.substr(6,2)+"<br>");                  // (start index,length of the index)
+
+        document.write(s.replace("only","many")+"<br>");
+
+        document.write(s+"<br>");
+
+
+        document.write(s.toUpperCase());
+
+        document.write(s.trim()+"<br>");            // remove the space around the string
+
+        var str="hello-33-33";
+
+        var arry=str.split('-');
+
+        document.write(arry);
+
+
+
+    
+    </script>
+</head>
+<body>
+
+    <div>this is an div</div>
+    
+</body>
+</html>

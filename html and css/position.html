@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+	<title>position attribute</title>
+	<style type="text/css">
+		
+		.box1{
+			background: red;
+			width: 1000px;
+			height: 1000px;
+			position: relative;
+			/*margin-top: 100px;*/
+			/*top:300px;*/
+			
+		}
+
+		.box2{
+			background: blue;
+			width:100px;
+			height: 100px;
+			position: absolute;
+			top:300px;
+
+		}
+
+		.box3{
+			width:100px;
+			height: 100px;
+			background: yellow;
+			right: 20px;
+			top:100px;
+			position: fixed;
+		}
+
+/*
+		.box4{
+			position: sticky;
+			background-color: green;
+			height: 100px;
+			width: 100px;
+			
+		}*/
+
+		.space{
+			height: 200px;
+			background-color: grey;
+		}
+
+		body{
+
+		}
+
+/*
+
+		static : normal flow
+		relative: change the position relative normal flow of the element and it maintain the normal webflow 
+		absolute : change the position with respect to the parent element only if it is (rel or abs)and take element from the normal webpage flow and */
+
+
+	</style>
+</head>
+
+<body>
+	<div class="space">	</div>
+	<div class="box4"></div>
+	
+  <div class="box1">
+
+  <div class="box2"></div>
+</div>
+	<div class="space">	</div>
+
+
+<div class="box3"></div>
+</body>
+
+

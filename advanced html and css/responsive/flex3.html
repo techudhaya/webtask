@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>flex3</title>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width">
+<style> 
+
+.container{
+  width: auto;
+  height: auto;
+  border: 1px solid #df8e8e;
+  display:flex;
+  flex-flow:row wrap;
+  padding:2%;
+
+}
+
+.container div {
+  width: 50px;
+  height: 50px;
+}
+
+/* flex : flex-grow flex-shrink flex-basis */
+
+/* grow -> increase the length wrt other flex items
+shrink -> shrink the length wrt other flex items
+basis -> set the inital length */
+
+div:nth-of-type(2){
+	flex-grow:3;
+}
+
+div:nth-of-type(4){
+	flex-shrink:3;
+}
+</style>
+</head>
+<body>
+
+<h1>The flex-flow Property</h1>
+
+<div class="container">
+  <div style="background-color:coral;">A</div>
+  <div style="background-color:lightblue;">B</div>
+  <div style="background-color:khaki;">C</div>
+  <div style="background-color:pink;">D</div>
+  <div style="background-color:lightgrey;">E</div>
+  <div style="background-color:lightgreen;">F</div>
+
+</div>
+<p><b>Note:</b> Internet Explorer 10 and earlier versions do not support the flex-flow property.</p>
+<p><b>Note:</b> Safari 6.1 (and newer) supports an alternative, the -webkit-flex-flow property.</p>
+
+</body>
+</html>

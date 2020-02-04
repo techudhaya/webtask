@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validate</title>
+
+    <style>
+
+        body{
+            background-color: whitesmoke;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+
+        form{
+            border: 20px double grey;
+            margin:12% 12%;
+            padding:8%;
+            background-color: darkgray;
+            opacity: 0.8;
+            background-image: url('world.jpeg');
+            background-size: cover;
+        }
+
+        input{
+            display: block;
+            width:100%;
+            box-sizing: border-box;
+        }
+
+
+        button{
+            display: block;
+            border:2px solid black;
+            width: 100%;
+            margin:10% 0;
+        }
+
+
+        .status{
+            font-size: 2em;
+            color:grey;
+        }
+
+        div{
+            text-align:center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <button id="click" onclick="show2()">form creation</button>
+
+    <div id="UF"></div>
+
+    <script>
+
+
+        function show(){
+
+        var form=`  <label for="name">enter the name</label>
+        <input type="text" id="name" autofocus> 
+
+        <label for="mail">enter mail</label>
+        <input type="email" id="mail"> 
+
+        <button type="button" onclick="validate()">clicky</button>
+
+        <div class="status"></div>`;
+
+
+        document.body.innerHTML=form;
+
+
+        }
+
+        function show2(){
+            
+            remove=document.querySelector("form");
+
+            // remove if present
+            if(remove)
+                remove.parentNode.removeChild(remove);
+
+            var form=document.createElement("form");
+    
+            
+            var input=document.createElement("input");
+                input.setAttribute("type","text");
+                input.setAttribute("placeholder","name");
+                input.style.cssText="margin:5%";
+                input.autofocus=true;
+                input.required=true;
+            form.appendChild(input)
+
+            var input=document.createElement("input");
+                input.setAttribute("type","text");
+                input.setAttribute("placeholder","number");
+                input.style.cssText="margin:5%";
+                input.required=true;
+            form.appendChild(input);
+
+            var button=document.createElement("button");
+                button.setAttribute("type","button");
+                button.setAttribute("onclick","show3()");
+                button.textContent="next";
+                button.style.cssText="margin:5%";
+            form.appendChild(button);
+
+            document.getElementById("UF").appendChild(form);
+
+
+        }
+
+
+        function show3(){
+
+        remove=document.querySelector("form");
+        remove.parentNode.removeChild(remove);
+                    
+        var form=document.createElement("form");
+
+        var input=document.createElement("input");
+            input.setAttribute("type","text");
+            input.setAttribute("placeholder","name");
+            input.style.cssText="margin:5%";
+            input.autofocus=true;
+        form.appendChild(input)
+
+        var input=document.createElement("input");
+            input.setAttribute("type","text");
+            input.setAttribute("placeholder","addr");
+            input.style.cssText="margin:5%";
+        form.appendChild(input);
+
+        var input=document.createElement("input");
+            input.setAttribute("type","text");
+            input.setAttribute("placeholder","drama");
+            input.style.cssText="margin:5%";
+        form.appendChild(input);
+
+
+        var input=document.createElement("input");
+            input.setAttribute("type","text");
+            input.setAttribute("placeholder","mail");
+            input.style.cssText="margin:5%";
+        form.appendChild(input);
+
+        var button=document.createElement("button");
+            button.setAttribute("type","button");
+            button.textContent="prev";
+            button.setAttribute("onclick","show2()");
+
+            button.style.cssText="margin:5%";
+            form.appendChild(button);
+
+
+            document.getElementById("UF").appendChild(form);
+
+
+    }
+
+        function validate(){
+
+           var x= document.getElementById("name").value;
+
+           if(x.length<4){   
+                document.getElementsByClassName("status")[0].textContent="TOO SMALL!!!!";
+                document.getElementsByClassName("status")[0].style.color="crimson";
+
+           }    
+           else{ 
+                document.getElementsByClassName("status")[0].textContent="perfect";
+                document.getElementsByClassName("status")[0].style.color="green";
+
+           }     
+        }
+
+        
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSevents</title>
+
+    
+    <script  >
+
+        function alerting(){
+            alert("you blurred");
+        }
+
+    </script>
+    
+</head>
+<body onload="alert('document has loaded')">
+
+    <div id="one">this is a div</div>
+
+    <button onclick="my_click()">touch</button>                             <!--javascript called by function on an event onclick-->
+
+    <button onclick="this.innerHTML='clicked two'">touch 2</button>         <!--inline javascript-->
+
+    <button ondblclick="my_dblclick()">touch 3</button>
+
+    <button onmouseout="my_mouseout()">touch 4</button>
+
+   
+   
+   
+   
+    <!-- change onchange -->
+  
+    <select id="mySelect" onchange="mySelect()">
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Volvo">Volvo</option>
+      </select>
+
+
+
+
+    
+
+
+
+      
+
+        <script>
+        
+        // java script function
+        function my_click(){
+            var div_object = document.getElementById("one");
+
+            div_object.innerHTML="clicked ";
+
+        }
+
+
+        // function to execute while selection is changed
+        function mySelect(){
+            var str=document.getElementById("mySelect").value;
+            document.getElementById("one").innerHTML=" changed to "+str;
+        }
+
+
+        function my_dblclick(){
+
+            document.getElementById("one").innerHTML="dblclick";
+        }
+
+        function my_mouseout(){
+            document.getElementById("one").innerHTML="mouseleave";
+
+        }     
+        </script>
+
+
+
+
+    
+</body>
+</html>

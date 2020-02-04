@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>selector 2</title>
+
+    <style>
+    
+        /* grouping selector */
+
+        h3,h1{
+            color:chocolate;
+        }
+        
+
+        /* Descendant combinator */
+        div p{
+            color:darkcyan;
+        }
+
+
+        /* child combinator */
+        div > p{
+            color:firebrick;
+        }
+
+        /* general sibiling */
+        div ~ p{
+            background-color: navajowhite;
+        }
+
+        /*adjacent sibling*/
+        div + p{
+            background-color: rosybrown;
+        }
+
+
+    
+    </style>
+</head>
+<body>
+    
+    <h1>this is the first heading</h1>
+    <h3>this is the second heading</h3>
+
+
+    <p>paragraph 2 that is child of the body.  div ~ p             (not selected)</p>
+
+    <p>paragraph 1 that is child of the body.  div ~ p      div + p(not selector)</p>
+
+
+  <hr>  
+<div>
+
+  <h2>My name is H2</h2>
+
+  <p>this is a paragraph1 div -------->     div p and div>p</p>
+  <p>this is a paragraph2 div -------->      div p and div>p</p>
+
+  <hr> 
+  <article>
+    <h2>My name is H2</h2>
+    <p>this is a paragraph1 div div ------>   div p</p>
+    <p>this is a paragraph2 div div ------>   div p</p>
+
+  </article>
+  <hr> 
+
+</div>
+    <hr> 
+
+<p>paragraph 1 that is child of the body. ------> div ~ p      div + p</p>
+<p>paragraph 2 that is child of the body. ------> div ~ p</p>
+<p>paragraph 3 that is child of the body. ------> div ~ p</p>
+
+
+</body>
+</html>

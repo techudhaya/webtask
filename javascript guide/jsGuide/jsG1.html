@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jsG1</title>
+
+    <script>
+    
+
+
+
+        console.log('30'+2);
+
+        console.log("");
+
+        let arry=['abc','def','geh'];
+
+        for(var i=0;i<arry.length;i++){
+
+            console.log(arry[i]);
+
+        }
+
+        (function(){
+            "use strict"
+            document.write("inside and nameless function")
+            var fù=10
+            var x=5
+            console.log(fù===undefined);
+
+            console.log(x);
+        })();
+
+        var a;
+        a=+2;
+
+        console.log(eval("5*5"));
+
+        console.log("")
+
+        
+        
+        //set 
+
+        var set= new Set();
+
+        for(var i=1;i<5;i++){
+            set.add(i);
+        }
+
+        set.add(2);
+        set.add(6);
+        
+        for(var i of set){
+            console.log(i)
+        }
+
+
+        //map
+        
+        console.log("");
+        var map=new Map();
+
+        map.set(55,"fivefive");
+        map.set("car","this is a car");
+
+        console.log(map.get(55))
+
+        for([i,v] of map){
+            console.log(i+"-->"+v)
+        }
+
+        
+    
+    </script>
+
+    
+
+</head>
+<body>
+    
+</body>
+</html>

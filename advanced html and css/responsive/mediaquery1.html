@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>media query</title>
+
+    <!-- internal media query -->
+    <style>
+    
+        /* for width between 200 to 500 */
+        @media screen and (min-width:200px)and (max-width:500px) {
+            body{
+            background-color:rgb(88, 30, 224) ;
+            color:white;
+            }
+
+            header{
+                background-color: skyblue;
+            }
+        }
+
+        /* for landscape */
+        @media only screen and (orientation: landscape) {
+            body{
+                background-color: grey;
+            }   
+        }
+
+    </style>
+
+    <!-- external media query -->
+    <link href="mediaquery1.css" rel="stylesheet" media="all and (min-width:500px) and (max-width: 1024px)">
+
+
+
+</head>
+<body>
+
+    <header style="padding:20px; text-align: center; border:3px solid grey;">responsive website</header>
+    
+</body>
+</html>

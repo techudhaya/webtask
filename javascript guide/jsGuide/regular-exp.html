@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regular expression</title>
+</head>
+<body>
+
+
+    <script>
+        
+        let re=/abc/;
+
+        let str="this is abc xyzz";
+
+        // return the index if present or -1
+        console.log((re.exec(str)));
+
+        // return true or false
+        console.log(re.test(str));
+
+
+        // match return the search character
+        const paragraph = 'The quick brown fox jumps over the lazy dog. It barked.';
+        const regex = /[A-Z]/g;
+        const found = paragraph.match(regex);  // return [T,I]
+
+        console.log(found);
+
+
+        //replace
+        str = "Visit Microsoft!";
+        var res = str.replace(/microsoft/i, "google");
+
+        console.log(res);
+
+
+        console.log("")
+
+
+
+
+        //recursion
+
+        function fact( n){
+            if(n<1)
+                return 1;
+            return n * fact(n-1);
+
+        }
+
+        console.log(fact(5))
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop and iteration</title>
+</head>
+<body>
+    
+
+    <script>
+    var n=4;
+    //    n=prompt("enter and number");
+        for(var i=0;i<=n;i++){
+                console.log(i)
+        }
+        
+    console.log("")
+
+    // outer and inner while loops
+    var i=0
+    outer:while(i<3){
+        var j=0
+        while(j<=5){
+            if(j==3)
+                break outer; // break the outer loop
+            console.log(j++)    
+
+        }i++;
+    }
+
+
+    var obj={a:'one', b:'two', c:'three' };
+
+    // index or key is obtained
+    for(i in obj){
+        console.log(i+" "+obj[i])
+    }
+
+
+    // index contain both numeric and string values
+
+    var arry1=[1,3,4,"aa"];
+    arry1.cat="bb";
+
+    for(i in arry1){
+        console.log("index "+i)
+    }
+        
+    </script>
+</body>
+</html>

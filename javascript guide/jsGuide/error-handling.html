@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error handling</title>
+
+</head>
+<body>
+    
+
+
+
+    <script>
+        
+    var x=1;
+    {
+        var x=2;
+    }// fall under the same scope
+
+    console.log(x)
+
+
+
+    /* array index out of bound exception*/
+
+    function getMonthName(mo) {
+    mo = mo - 1; 
+
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+                'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+        // if array index out of bound
+        if (months[mo]) {
+            return months[mo];
+        } else {
+            throw 'InvalidMonthNo'; // throw keyword is used here
+        }
+}
+
+    try { // statements to try
+        var myMonth=5;
+        monthName = getMonthName(myMonth); // function could throw exception
+
+        console.log(monthName);
+    }
+    catch (e) {
+        console.error('this is ann errorrr '+e);    
+    }
+    
+    finally{
+        console.log("finally the end of the of the error handling")
+    }
+    </script>
+</body>
+</html>

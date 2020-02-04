@@ -1,0 +1,72 @@
+
+body{
+    background-color: grey;
+    background-image: url("image/space5.jpeg");
+    background-attachment: fixed;
+    background-size: contain;
+    background-position: 50%;
+
+}
+
+
+header .heading{
+    background-color:black;
+    text-align: center;
+    color:white;
+    padding:3%;
+    font-size: 3em;
+    border-radius: 20px;
+    background-image: url("image/space5.jpeg");
+    background-position: 20%;
+
+      
+    
+}
+
+.sep{
+
+    border:1px solid whitesmoke;
+    margin:5%;
+    border-radius: 10px;
+   
+}
+
+section{
+
+    color:white;
+    margin:5%;
+
+}
+
+article p{
+
+    margin:10%;
+    text-align: justify;
+
+}
+
+
+figure img {
+
+    height: 20%;
+    width: 40%;
+    margin:5%;
+    border: 2px dashed grey;
+
+}
+
+article:nth-of-type(2n) img{
+
+ 
+    float: right;
+
+}
+
+
+ article:nth-of-type(2n+1) img{
+
+
+    float:left;
+   
+} 
+

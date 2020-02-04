@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+
+    <title>float over flow managing</title>
+
+    <style>
+
+/* if we comment this we cannot see the box shadow */
+.box-set:before,
+.box-set:after {
+  content: "";
+  display: block;
+}
+
+
+.box-set {
+  background: #c67fc9;
+  *zoom: 1;
+  overflow: auto;
+}
+.box {
+  background: #2db34a;
+  box-shadow: 0 15px 20px #ff7b29;
+  float: left;
+  margin: 1.858736059%;
+  padding: 20px 0;
+  text-align: center;
+  width: 29.615861214%;
+
+}
+.box:nth-child(2) {
+  position: relative;
+  top: 50px;
+}
+    </style>
+</head>
+<body>
+    <div class="box-set">
+        <figure class="box">Box 1</figure>
+        <figure class="box">Box 2</figure>
+        <figure class="box">Box 3</figure>
+      </div>
+
+    </body>
+</html>

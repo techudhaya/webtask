@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 2 test</title>
+
+    <style>
+
+        /* flex: grow shrink basis */
+
+        .container{
+            background-color:grey;
+            display:flex;
+            justify-content:space-between;
+            align-items: center;
+            flex-wrap: wrap;   
+            flex-flow: row wrap;  /* it wrap the element in the available space */
+
+        }
+
+        .item{
+            background-color:royalblue;
+            padding:20px 20px;
+            margin:10px;
+            text-align:center;
+        }
+
+        /* grow and shrink increase and decrease the item size in the flex box */
+        .item-2{
+            height: 70px;
+            order:1;
+            flex-grow: 2;
+            width:25%;
+            overflow: auto;
+        }
+
+         /* if order properties all item in the flex must be ordered otherwise it pushed forward and ordering start    */
+        .item-3{
+            height: 50px;
+            order:4;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="item">item 1</div>
+        <div class="item item-2">item 2 he Internet took off quicker than anyone would have predicted, growing like crazy. </div>
+        <div class="item item-3">item 3</div>
+        <div class="item item-4">item 4</div>
+    </div>
+    
+</body>
+</html>
