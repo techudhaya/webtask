@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>working with class</title>
+    <style>
+
+        /* display option for phone choosing */
+        .option{
+            border: 2px solid grey;
+            border-radius: 20px;
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+            margin:15%;
+            color:white;
+            padding-top:7%;
+            padding-left:2%;
+    
+        }
+
+        .option:hover{
+            transform: scale(1.5);
+        }
+
+        .single{
+            background-color: crimson;
+        }
+
+        .dual{
+            background-color: rgb(7, 151, 151);
+        }
+
+
+
+        /* phone desing and layout */
+
+        #phone,#phone2{
+            background-color:#2f92bf;
+            border-radius: 50px;
+            border:10px solid grey;
+
+            height: 50vh;
+            width: 30vh;
+
+            margin:10% 40%;
+        }
+
+        #phone2{
+            background-color:#783dc5;
+
+        }
+        .screen{
+            border-radius: 50px;
+            padding: 10%;
+            background-color:white;
+            border: 3px solid grey;
+            height: 30vh;
+        }
+        .screen input{
+            width: 100%;
+            display: inline-block;
+            height: 5vh;
+            font-size: 1.3em;
+        }
+
+        .button input{
+            width: 80%;
+            margin: 5% 10%;
+            display: inline-block;
+            height: 5vh;
+
+        }
+
+        #phone2 .button input{
+            width: 28%;
+            display: inline-block;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <div id="option">
+        <div class="option single" onclick="single()">single phone</div>
+
+        <div class="option dual" onclick="dual()">dual phone</div>
+    </div>
+    
+    <section id="phone">
+
+        <div class="screen">
+
+            <input type="text" name="phone_number" placeholder="NUMBER" autocomplete="off">
+            <input type="text" name="message" placeholder="MESSAGE" autocomplete="off">
+
+            <div id="disp"></div>
+
+        </div>
+
+        <div class="button">
+
+            <input type="button" value="CALL" onclick="p.call()">
+            <input type="button" value="MSG"   onclick="p.msg()" >
+        </div>
+
+    </section>
+    <section id="phone2">
+
+        <div class="screen">
+
+            <input type="text" name="phone_number" placeholder="NUMBER" autocomplete="off">
+            <input type="text" name="message" placeholder="MESSAGE" autocomplete="off">
+
+            <div id="disp"></div>
+
+        </div>
+
+        <div class="button">
+
+            <input type="button" value="CALL 1" onclick="p2.call()">
+            <input type="button" value="CALL 2" onclick="p2.call2()">
+
+            <input type="button" value="MSG 1"   onclick="p2.msg()" >
+            <input type="button" value="MSG 2"   onclick="p2.msg2()" >
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        class phone{
+
+
+
+        }
+
+        class single{
+
+        }
+
+        class dual{
+                dfddfdfdfdf
+                dsfsd
+                
+        }
+
+        
+       
+    </script>
+        
+    <script>
+        
+        /// deciding which element to be displayed
+        
+        var phone_to_disp1 = document.getElementById("phone");
+        var phone_to_disp2 = document.getElementById("phone2");
+        
+        
+        phone_to_disp1.style.display="none";
+        phone_to_disp2.style.display="none";
+        
+        
+        function  single() {
+            document.getElementById("option").style.display="none";
+            phone_to_disp1.style.display="inherit";
+            p=new phone();
+            
+        }
+        
+        function  dual() {
+            document.getElementById("option").style.display="none";
+            phone_to_disp2.style.display="inherit";
+            p2=new dual_phone();
+            
+        }
+                
+    </script>
+</body>
+</html>
